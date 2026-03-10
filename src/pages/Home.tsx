@@ -157,19 +157,19 @@ export default function Home() {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          style={{
-            position: 'absolute', bottom: '32px', left: '50%',
-            transform: 'translateX(-50%)',
-            color: 'rgba(255,255,255,0.4)',
-            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px'
-          }}
-        >
-          <span style={{ fontSize: '0.7rem', letterSpacing: '0.15em', fontFamily: 'Oswald' }}>SCROLL</span>
-          <ChevronDown size={18} />
-        </motion.div>
+        <div style={{ position: 'absolute', bottom: '32px', left: '50%', transform: 'translateX(-50%)' }}>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            style={{
+              color: 'rgba(255,255,255,0.4)',
+              display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px'
+            }}
+          >
+            <span style={{ fontSize: '0.7rem', letterSpacing: '0.15em', fontFamily: 'Oswald' }}>SCROLL</span>
+            <ChevronDown size={18} />
+          </motion.div>
+        </div>
       </section>
 
       {/* STATS BAR */}
