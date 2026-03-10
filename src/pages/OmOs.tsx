@@ -59,7 +59,7 @@ export default function OmOs() {
   return (
     <div>
       {/* HERO */}
-      <section style={{
+      <section className="page-hero" style={{
         position: 'relative',
         paddingTop: '200px',
         paddingBottom: '100px',
@@ -106,8 +106,8 @@ export default function OmOs() {
       </section>
 
       {/* STORY SECTION */}
-      <section style={{ padding: '80px 24px 100px', backgroundColor: '#0A0A0A' }}>
-        <div style={{
+      <section className="section-xl" style={{ padding: '80px 24px 100px', backgroundColor: '#0A0A0A' }}>
+        <div className="grid-gap-xl" style={{
           maxWidth: '1280px', margin: '0 auto',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',

@@ -202,7 +202,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES SECTION */}
-      <section style={{ padding: '100px 24px', backgroundColor: '#0A0A0A' }}>
+      <section className="section-xl" style={{ padding: '100px 24px', backgroundColor: '#0A0A0A' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <SectionHeading
             label="Hvad vi tilbyder"
@@ -233,8 +233,8 @@ export default function Home() {
       </section>
 
       {/* ABOUT TEASER */}
-      <section style={{ padding: '100px 24px', backgroundColor: '#080808' }}>
-        <div style={{
+      <section className="section-xl" style={{ padding: '100px 24px', backgroundColor: '#080808' }}>
+        <div className="grid-gap-lg" style={{
           maxWidth: '1280px', margin: '0 auto',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -247,10 +247,10 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            style={{ position: 'relative' }}
+            style={{ position: 'relative', paddingTop: '16px', paddingLeft: '16px' }}
           >
-            <div style={{
-              position: 'absolute', top: '-16px', left: '-16px',
+            <div className="deco-border" style={{
+              position: 'absolute', top: '0', left: '0',
               width: '100%', height: '100%',
               border: '2px solid #FF6B00',
               borderRadius: '4px',
@@ -379,7 +379,7 @@ export default function Home() {
       </section>
 
       {/* CTA SECTION */}
-      <section style={{
+      <section className="section-xl" style={{
         padding: '100px 24px',
         backgroundColor: '#111111',
         position: 'relative',

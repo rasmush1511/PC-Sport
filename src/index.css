@@ -50,3 +50,23 @@ h1, h2, h3, h4, h5 {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #0A0A0A; }
 ::-webkit-scrollbar-thumb { background: #FF6B00; border-radius: 3px; }
+
+/* ====================================
+   RESPONSIVE FIXES
+   ==================================== */
+
+/* Page hero headers */
+@media (max-width: 768px) {
+  .page-hero { padding-top: 130px !important; padding-bottom: 56px !important; }
+}
+@media (max-width: 640px) {
+  .page-hero { padding-top: 112px !important; padding-bottom: 48px !important; }
+  .section-xl { padding-top: 64px !important; padding-bottom: 64px !important; }
+  .section-lg { padding-top: 56px !important; padding-bottom: 56px !important; }
+  .section-md { padding-top: 48px !important; padding-bottom: 48px !important; }
+  .grid-gap-xl { gap: 36px !important; }
+  .grid-gap-lg { gap: 28px !important; }
+  .form-row-2 { grid-template-columns: 1fr !important; }
+  .deco-border { display: none !important; }
+  .px-safe { padding-left: 16px !important; padding-right: 16px !important; }
+}

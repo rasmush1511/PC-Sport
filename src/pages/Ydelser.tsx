@@ -65,7 +65,7 @@ export default function Ydelser() {
   return (
     <div>
       {/* PAGE HEADER */}
-      <section style={{
+      <section className="page-hero" style={{
         position: 'relative',
         paddingTop: '160px',
         paddingBottom: '80px',

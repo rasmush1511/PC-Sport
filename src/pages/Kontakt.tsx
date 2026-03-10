@@ -77,7 +77,7 @@ export default function Kontakt() {
   return (
     <div>
       {/* PAGE HEADER */}
-      <section style={{
+      <section className="page-hero" style={{
         position: 'relative',
         paddingTop: '160px',
         paddingBottom: '80px',
@@ -186,7 +186,7 @@ export default function Kontakt() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                <div className="form-row-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                   <div>
                     <label style={labelStyle} htmlFor="navn">Navn *</label>
                     <input
@@ -215,7 +215,7 @@ export default function Kontakt() {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                <div className="form-row-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
                   <div>
                     <label style={labelStyle} htmlFor="telefon">Telefon (valgfri)</label>
                     <input
