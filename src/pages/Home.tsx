@@ -247,23 +247,15 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="about-image-container"
-            style={{ position: 'relative', padding: '16px' }}
+            style={{ position: 'relative' }}
           >
-            <div className="deco-border" style={{
-              position: 'absolute', top: '0', right: '0', bottom: '0', left: '0',
-              border: '2px solid #FF6B00',
-              borderRadius: '4px',
-              zIndex: 0
-            }} />
             <img
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
               alt="Cykelmekaniker ved arbejde"
               style={{
                 width: '100%', height: '420px',
                 objectFit: 'cover',
-                borderRadius: '2px',
-                position: 'relative', zIndex: 1,
+                borderRadius: '4px',
                 display: 'block'
               }}
             />
