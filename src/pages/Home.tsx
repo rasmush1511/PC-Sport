@@ -234,10 +234,10 @@ export default function Home() {
 
       {/* ABOUT TEASER */}
       <section className="section-xl" style={{ padding: '100px 24px', backgroundColor: '#080808' }}>
-        <div className="grid-gap-lg" style={{
+        <div className="grid-gap-lg about-teaser-grid" style={{
           maxWidth: '1280px', margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gridTemplateColumns: '1fr 1fr',
           gap: '64px',
           alignItems: 'center'
         }}>
@@ -247,11 +247,11 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            style={{ position: 'relative', paddingTop: '16px', paddingLeft: '16px' }}
+            className="about-image-container"
+            style={{ position: 'relative', padding: '16px' }}
           >
             <div className="deco-border" style={{
-              position: 'absolute', top: '0', left: '0',
-              width: '100%', height: '100%',
+              position: 'absolute', top: '0', right: '0', bottom: '0', left: '0',
               border: '2px solid #FF6B00',
               borderRadius: '4px',
               zIndex: 0
@@ -262,8 +262,9 @@ export default function Home() {
               style={{
                 width: '100%', height: '420px',
                 objectFit: 'cover',
-                borderRadius: '4px',
-                position: 'relative', zIndex: 1
+                borderRadius: '2px',
+                position: 'relative', zIndex: 1,
+                display: 'block'
               }}
             />
           </motion.div>
@@ -343,9 +344,9 @@ export default function Home() {
             subtitle="Vi fører og forhandler produkter fra verdens bedste cykelbrands."
             center
           />
-          <div style={{
+          <div className="brands-grid" style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+            gridTemplateColumns: 'repeat(6, 1fr)',
             gap: '16px'
           }}>
             {brands.map((brand, i) => (

@@ -68,5 +68,45 @@ h1, h2, h3, h4, h5 {
   .grid-gap-lg { gap: 28px !important; }
   .form-row-2 { grid-template-columns: 1fr !important; }
   .deco-border { display: none !important; }
+  .about-image-container { padding: 0 !important; }
   .px-safe { padding-left: 16px !important; padding-right: 16px !important; }
+}
+
+/* ====================================
+   ABOUT TEASER — FORCED 2-COLUMN
+   ==================================== */
+.about-teaser-grid {
+  grid-template-columns: 1fr 1fr !important;
+}
+@media (max-width: 768px) {
+  .about-teaser-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+/* ====================================
+   BRANDS GRID — 6 COLUMNS DESKTOP
+   ==================================== */
+.brands-grid {
+  grid-template-columns: repeat(6, 1fr) !important;
+}
+@media (max-width: 1024px) {
+  .brands-grid { grid-template-columns: repeat(4, 1fr) !important; }
+}
+@media (max-width: 640px) {
+  .brands-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+
+/* ====================================
+   YDELSER SERVICES GRID — 3 COLUMNS
+   ==================================== */
+.services-3-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+@media (max-width: 768px) {
+  .services-3-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .services-3-grid { grid-template-columns: 1fr !important; }
 }

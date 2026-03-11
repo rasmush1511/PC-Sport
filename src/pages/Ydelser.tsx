@@ -113,9 +113,9 @@ export default function Ydelser() {
       {/* SERVICES GRID */}
       <section style={{ padding: '80px 24px', backgroundColor: '#0A0A0A' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <div style={{
+          <div className="services-3-grid" style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '24px'
           }}>
             {services.map((service, i) => (

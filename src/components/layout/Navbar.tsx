@@ -14,6 +14,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -21,12 +22,20 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 768px)')
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+
   return (
-    <header style={{
+    <header className="navbar-header" style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-      backgroundColor: scrolled ? 'rgba(10,10,10,0.98)' : '#0A0A0A',
-      borderBottom: '1px solid rgba(255,255,255,0.08)',
+      backgroundColor: isMobile ? '#1A1A1A' : (scrolled ? 'rgba(10,10,10,0.98)' : '#0A0A0A'),
+      borderBottom: isMobile ? '2px solid rgba(255,107,0,0.5)' : '1px solid rgba(255,255,255,0.08)',
       backdropFilter: 'blur(10px)',
+      boxShadow: isMobile ? '0 4px 20px rgba(0,0,0,0.8)' : 'none',
       transition: 'all 0.3s ease'
     }}>
       <nav style={{
@@ -115,7 +124,9 @@ export default function Navbar() {
               transition={{ type: 'tween', duration: 0.3 }}
               style={{
                 position: 'fixed', top: 0, right: 0, bottom: 0, width: '280px',
-                backgroundColor: '#111111',
+                backgroundColor: '#1A1A1A',
+                borderLeft: '1px solid rgba(255,107,0,0.2)',
+                boxShadow: '-8px 0 32px rgba(0,0,0,0.6)',
                 zIndex: 1002, padding: '24px',
                 display: 'flex', flexDirection: 'column', gap: '8px'
               }}
@@ -164,6 +175,10 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: flex !important; }
+          .navbar-header {
+            background-color: #111111 !important;
+            border-bottom: 1px solid rgba(255,107,0,0.2) !important;
+          }
         }
       `}</style>
     </header>
