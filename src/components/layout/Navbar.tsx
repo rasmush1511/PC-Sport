@@ -110,62 +110,64 @@ export default function Navbar() {
       {/* Mobile drawer */}
       <AnimatePresence>
         {open && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              onClick={() => setOpen(false)}
-              style={{
-                position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.7)',
-                zIndex: 1001, backdropFilter: 'blur(4px)'
-              }}
-            />
-            <motion.div
-              initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
-              transition={{ type: 'tween', duration: 0.3 }}
-              style={{
-                position: 'fixed', top: 0, right: 0, bottom: 0, width: '280px',
-                backgroundColor: '#1A1A1A',
-                borderLeft: '1px solid rgba(255,107,0,0.2)',
-                boxShadow: '-8px 0 32px rgba(0,0,0,0.6)',
-                zIndex: 1002, padding: '24px',
-                display: 'flex', flexDirection: 'column', gap: '8px'
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-                <span style={{ fontFamily: 'Oswald', fontSize: '1.2rem', color: '#FF6B00', letterSpacing: '0.1em' }}>MENU</span>
-                <button onClick={() => setOpen(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#F5F5F5' }}>
-                  <X size={24} />
-                </button>
-              </div>
-              {links.map(l => (
-                <NavLink key={l.to} to={l.to} end={l.to === '/'} onClick={() => setOpen(false)}
-                  style={({ isActive }) => ({
-                    textDecoration: 'none',
-                    fontFamily: 'Oswald, sans-serif',
-                    fontSize: '1.2rem',
-                    fontWeight: 500,
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                    color: isActive ? '#FF6B00' : '#F5F5F5',
-                    padding: '12px 0',
-                    borderBottom: '1px solid rgba(255,255,255,0.08)'
-                  })}
-                >{l.label}</NavLink>
-              ))}
-              <a href="tel:65962606" style={{
-                marginTop: '24px',
-                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                backgroundColor: '#FF6B00', color: '#0A0A0A',
-                padding: '14px', borderRadius: '2px',
-                textDecoration: 'none',
-                fontFamily: 'Oswald', fontSize: '1rem', fontWeight: 600,
-                letterSpacing: '0.08em', textTransform: 'uppercase'
-              }}>
-                <Phone size={16} />
-                65 96 26 06
-              </a>
-            </motion.div>
-          </>
+          <motion.div
+            key="overlay"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            onClick={() => setOpen(false)}
+            style={{
+              position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.85)',
+              zIndex: 1001
+            }}
+          />
+        )}
+        {open && (
+          <motion.div
+            key="drawer"
+            initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="mobile-drawer"
+            style={{
+              position: 'fixed', top: 0, right: 0, bottom: 0, width: '280px',
+              borderLeft: '2px solid rgba(255,107,0,0.4)',
+              boxShadow: '-8px 0 40px rgba(0,0,0,0.9)',
+              zIndex: 1002, padding: '24px',
+              display: 'flex', flexDirection: 'column', gap: '8px'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+              <span style={{ fontFamily: 'Oswald', fontSize: '1.2rem', color: '#FF6B00', letterSpacing: '0.1em' }}>MENU</span>
+              <button onClick={() => setOpen(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#F5F5F5' }}>
+                <X size={24} />
+              </button>
+            </div>
+            {links.map(l => (
+              <NavLink key={l.to} to={l.to} end={l.to === '/'} onClick={() => setOpen(false)}
+                style={({ isActive }) => ({
+                  textDecoration: 'none',
+                  fontFamily: 'Oswald, sans-serif',
+                  fontSize: '1.2rem',
+                  fontWeight: 500,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: isActive ? '#FF6B00' : '#F5F5F5',
+                  padding: '12px 0',
+                  borderBottom: '1px solid rgba(255,255,255,0.08)'
+                })}
+              >{l.label}</NavLink>
+            ))}
+            <a href="tel:65962606" style={{
+              marginTop: '24px',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+              backgroundColor: '#FF6B00', color: '#0A0A0A',
+              padding: '14px', borderRadius: '2px',
+              textDecoration: 'none',
+              fontFamily: 'Oswald', fontSize: '1rem', fontWeight: 600,
+              letterSpacing: '0.08em', textTransform: 'uppercase'
+            }}>
+              <Phone size={16} />
+              65 96 26 06
+            </a>
+          </motion.div>
         )}
       </AnimatePresence>
 

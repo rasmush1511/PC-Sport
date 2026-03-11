@@ -73,6 +73,14 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ====================================
+   MOBILE DRAWER — SOLID BACKGROUND
+   ==================================== */
+.mobile-drawer {
+  background-color: #1C1C1C !important;
+  background: #1C1C1C !important;
+}
+
+/* ====================================
    ABOUT TEASER — FORCED 2-COLUMN
    ==================================== */
 .about-teaser-grid {
